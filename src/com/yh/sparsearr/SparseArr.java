@@ -1,4 +1,4 @@
-package com.yh.sparseArr;
+package com.yh.sparsearr;
 
 import java.io.*;
 
