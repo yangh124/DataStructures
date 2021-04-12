@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 /**
  * 冒泡排序
- *
+ * <p>
  * 时间复杂度 O(n²)
  *
  * @author : yh
@@ -13,13 +13,10 @@ import java.util.Arrays;
 public class BubbleSort {
 
     public static void main(String[] args) {
-        int[] arr = {3, 9, -1, 10, -2};
-
         /*
           为了容易理解，我们将冒泡排序的演变过程，给大家展示
          */
-
-        /*
+        int[] arr = {3, 9, -1, 10, -2};
         //第一趟排序，就是将最大的数排在最后
         int temp;
         for (int j = 0; j < arr.length - 1; j++) {
@@ -63,7 +60,7 @@ public class BubbleSort {
             }
         }
         System.out.println("第四趟排序后的数组");
-        System.out.println(Arrays.toString(arr));*/
+        System.out.println(Arrays.toString(arr));
 
         System.out.println("=================冒泡排序=================");
         int[] array = new int[80000];
