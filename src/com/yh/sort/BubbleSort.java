@@ -63,10 +63,7 @@ public class BubbleSort {
         System.out.println(Arrays.toString(arr));
 
         System.out.println("=================冒泡排序=================");
-        int[] array = new int[80000];
-        for (int i = 0; i < 80000; i++) {
-            array[i] = (int) (Math.random() * 8000000);
-        }
+        int[] array = ArrayUtil.getArray();
         long start = System.currentTimeMillis();
         bubbleSort(array);
         long end = System.currentTimeMillis();

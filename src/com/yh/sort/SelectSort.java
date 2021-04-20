@@ -68,10 +68,7 @@ public class SelectSort {
         System.out.println(Arrays.toString(array));
 
         System.out.println("=================选择排序=================");
-        int[] arr = new int[80000];
-        for (int i = 0; i < 80000; i++) {
-            arr[i] = (int) (Math.random() * 8000000);
-        }
+        int[] arr = ArrayUtil.getArray();
         long start = System.currentTimeMillis();
         selectSort(arr);
         long end = System.currentTimeMillis();
