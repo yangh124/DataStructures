@@ -23,16 +23,22 @@ public class SingleLinkedListDemo {
         list.addByOrder(heroNode1);
         list.updateByNo(new HeroNode(1, "杨皓", "大帅哥"));
         list.deleteByNo(1);
+        System.out.println("=======================打印链表=======================");
         list.list();
-        System.out.println("=========================================");
+        int n = 1;
+        System.out.println("=======================获取倒数第" + n + "个=======================");
         // int length = getLength(list.getHeadNode());
-        HeroNode lastIndexNode = getLastIndexNode(list.getHeadNode(), 1);
+        HeroNode lastIndexNode = getLastIndexNode(list.getHeadNode(), n);
         System.out.println(lastIndexNode);
-        System.out.println("=========================================");
-        reverseList(list.getHeadNode());
-        list.list();
-        System.out.println("=========================================");
-        reversePrint(list.getHeadNode());
+        System.out.println("=======================反转链表=======================");
+        //reverseList(list.getHeadNode());
+        //list.list();
+        HeroNode heroNode = reversePro(list.getHeadNode().next);
+        SingleLinkedList singleLinkedList = new SingleLinkedList();
+        singleLinkedList.add(heroNode);
+        singleLinkedList.list();
+        System.out.println("=======================反转打印输出=======================");
+        reversePrint(singleLinkedList.getHeadNode());
     }
 
     /**
@@ -96,6 +102,18 @@ public class SingleLinkedListDemo {
             cur = temp;
         }
         head.next = reverseHeadNode.next;
+    }
+
+    /**
+     * @param node 节点
+     * @return
+     */
+    public static HeroNode reversePro(HeroNode node) {
+        if (node == null || node.next == null) return node;
+        HeroNode heroNode = reversePro(node.next);
+        node.next.next = node;
+        node.next = null;
+        return heroNode;
     }
 
     /**
