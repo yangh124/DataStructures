@@ -31,6 +31,10 @@ public class BinaryTreeDemo {
         System.out.println(binaryTree.infixSearch(5));
         System.out.println("==========后序遍历查找==========");
         System.out.println(binaryTree.postSearch(5));
+        System.out.println("==========删除结点==========");
+        System.out.println("==========前序遍历==========");
+        binaryTree.delNode(2);
+        binaryTree.preOrder();
     }
 }
 
@@ -42,6 +46,18 @@ class BinaryTree {
 
     public void setRoot(HeroNode root) {
         this.root = root;
+    }
+
+    public void delNode(int no) {
+        if (root == null) {
+            System.out.println("空树，不能删除~");
+            return;
+        }
+        if (this.root.getNo() == no) {
+            root = null;
+            return;
+        }
+        this.root.delNode(no);
     }
 
     //前序遍历
@@ -137,6 +153,23 @@ class HeroNode {
 
     public void setRight(HeroNode right) {
         this.right = right;
+    }
+
+    public void delNode(int no) {
+        if (this.left != null && this.left.no == no) {
+            this.left = null;
+            return;
+        }
+        if (this.right != null && this.right.no == no) {
+            this.right = null;
+            return;
+        }
+        if (this.left != null) {
+            this.left.delNode(no);
+        }
+        if (this.right != null) {
+            this.right.delNode(no);
+        }
     }
 
     /**
