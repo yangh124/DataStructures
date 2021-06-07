@@ -12,7 +12,7 @@ public class ArrBinaryTreeDemo {
         int[] arr = {1, 2, 3, 4, 5, 6, 7};
         ArrBinaryTree arrBinaryTree = new ArrBinaryTree(arr);
         System.out.println("===========前序遍历===========");
-        arrBinaryTree.preOrder(0);
+        arrBinaryTree.preOrder();
         System.out.println("===========中序遍历===========");
         arrBinaryTree.infixOrder();
         System.out.println("===========后序遍历===========");
