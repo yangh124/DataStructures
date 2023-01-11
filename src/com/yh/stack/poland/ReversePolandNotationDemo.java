@@ -12,7 +12,7 @@ import java.util.Stack;
  * @author : yh
  * @date : 2021/3/22 20:20
  */
-public class PolandNotationDemo {
+public class ReversePolandNotationDemo {
 
     public static void main(String[] args) {
         //(3+4)x5-6 -> 3 4 + 5 * 6 -
